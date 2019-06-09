@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    line-height: 1.6;
+  }
+  
+  /*===========================================
+  Basic layout
+  ==============================================*/
+  
+  /*start of header*/
+  
+  /*start of navigation bar*/
+  
+  .main_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(11, 36, 76);
+  }
+  
+  .main_header a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .main_nav_right,
+  .main_nav_left {
+    list-style: none;
+  }
+  
+  .main_nav_left li,
+  .main_nav_right li {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .main_nav_left li a,
+  .main_nav_right li a {
+    text-decoration: none;
+    font-family: Montserrat;
+    color: white;
+  }
+  
+  .main_header_title h1 {
+    font-family: Montserrat;
+  }
+  
+  .main_nav_left li a:hover,
+  .main_nav_right li a:hover {
+    border-bottom: 1px solid white;
+  }
+  
+  /*end of navigation bar*/
+  
+  .main_header_content {
+    background: url(images/fishing-409138_1920.jpg) no-repeat center;
+    background-size: cover;
+    height: 48em;
+    color: white;
+    background-attachment: fixed;
+  }
+  
+  .main_header_content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .container_header_content {
+    margin: 0 2em;
+    font-family: Open Sans;
+  }
+  
+  .main_header_content h1 {
+    padding: 0 0.5em;
+    font-family: Open Sans;
+    font-size: 3em;
+  }
+  
+  /*end of HEADER*/
+  
+
+
+
+
+
+  /* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+  
+  /*Start of MAIN*/
+  .primary-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .primary-section-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(11, 36, 76);
+    margin: 2em;
+  }
+  
+  .primary-section-title h1 {
+    border-bottom: 2px solid rgb(11, 36, 76);
+    font-size: 4em;
+  }
+  
+  .primary-section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+  }
+  
+  .primary-section-content-image img {
+    width: 100%;
+  }
+  
+  .primary-section-content-info p {
+    margin: 2em;
+  }
+
+  .infoP p{
+    font-size: 2.5em;
+    padding: 100px;
+    padding-bottom: 200px;
+    text-align: center;
+  }
+
+  /*End of MAIN*/
+  
+  
+  /*start of FOOTER*/
+  
+  .main_footer {
+    background-color: rgb(11, 36, 76);
+    color: white;
+    padding: 2em 1em;
+    font-family: Montserrat;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer_section_one,
+  .footer_section_two,
+  .footer_section_three {
+    align-items: center;
+    margin: 5em 1em 0 1em;
+  }
+  
+  .footer_section_one_title p,
+  .footer_section_one_info p,
+  .footer_section_two_title p,
+  .footer_section_two_info p,
+  .footer_section_three_title p,
+  .footer_section_three_info p {
+    text-align: center;
+  }
+  
+  .copy_right {
+    margin-top: 3em;
+  }
+  
+  /*end of FOOTER*/
+  
+  /*=================================
+      User signup form
+   ==================================*/
+
+   body {font-family: Arial, Helvetica, sans-serif;}
+   * {box-sizing: border-box;}
+   
+   .input-container {
+     display: flex;
+     width: 100%;
+     margin-bottom: 20px;
+     margin-top: 20px;
+   }
+   
+   .icon {
+     padding: 10px;
+     background: dodgerblue;
+     color: white;
+     min-width: 50px;
+     text-align: center;
+   }
+   
+   .input-field {
+     width: 100%;
+     padding: 10px;
+     outline: none;
+   }
+   
+   .input-field:focus {
+     border: 1px solid dodgerblue;
+   }
+   
+   /* Set a style for the submit button */
+   .sbtn {
+     background-color: dodgerblue;
+     color: white;
+     padding: 15px 20px;
+     border: none;
+     cursor: pointer;
+     width: 100%;
+     opacity: 0.9;
+     margin-bottom: 20px;
+   }
+   .sbtn2{
+     background-color: red;
+   }
+   .sbtn:hover {
+     opacity: 3;
+   }
+
+   /*End of signup form*/
+
+   /* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+  /*======================================
+    Login form
+  =====================================*/
+  .login-main-section {
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat;
+  }
+  
+  .login-main-section-info {
+    margin: 3em;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-main-section-imag img {
+    min-width: 30em;
+    width: 100%;
+    height: 100%;
+    max-width: 70em;
+  }
+  
+  .main-section-form,
+  .form-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-header {
+    margin: 1em 0;
+    text-align: center;
+    color: rgb(91, 83, 82);
+  }
+  
+  #email-label,
+  #password-label,
+  #usrinfoform-input-1,
+  #usrinfoform-input-2,
+  #usrinfoform-input-3,
+  #usrinfoform-input-4,
+  #usrinfoform-input-5,
+  #usrinfoform-input-6,
+  #usrinfoform-input-7,
+  #usrinfoform-input-8,
+  #usrinfoform-input-9 {
+    border-style: none;
+    border-bottom: 1px solid grey;
+    padding: .5em;
+  }
+  
+  .login-label {
+    margin: 1em 0;
+  }
+  
+  .login-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+  }
+  
+  .login-button button,
+  .usrinfoform-button button{
+    padding: .5em 4em;
+    font-size: 1em;
+    border-radius: .5em;
+    background-color: #17357E;
+    color: white;
+    margin-bottom: 1em;
+  }
+  
+  .login-button a {
+    text-decoration: none;
+    color: rgb(91, 83, 82);
+  }
+  
+  /* End of register form */
+  
+  /* Card post update*/
+  .card-container {
+    width: 500px;
+    height: 600px;
+    position: relative;  
+    perspective: 800px;
+    border-radius: 4px;
+    margin: 50px 0px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    padding: 25px;
+  }
+ 
+  /*==================================
+    Post update form
+  ====================================*/
+  /* .post-main-cont {
+    max-width:800px;
+    width:50%;
+    margin:30px 300px;
+    padding-bottom:50px;
+    padding-top:90px;
+    background: #ebe5e5c7;
+    border-radius: 6px;
+
+  }
+  .cityVill, 
+  .dist, 
+  .state, 
+  .pin {
+    width:25%;
+    border:0;
+    margin:0px 25px;
+    background:#595959;
+    padding:17px 17px;
+    font-size:1.2em;
+    font-family:"Gentium Book Basic";
+    box-shadow:4px 4px 0px rgba(0,0,0,.1);
+    color:#111;
+  }  */
+
+ /* Style inputs, select elements and textareas */
+ input[type=text], textarea{
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+#country {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 8px 8px 8px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 750px;
+  margin-top: 20px;
+  float: right;
+}
+
+/* Style the container */
+.containerPost {
+  border-radius: 5px;
+  background-color: #e6f5ff;
+  padding: 20px;
+  margin: 50px 300px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 20%;
+  margin-top: 5px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 70%;
+  margin-top: 5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+} 
+
+  /* End of post update form*/
+
+  /*==================================
+    Posts index page 
+  ====================================*/
+
+ /* The Modal (background) */
+ .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
+  /* End of post index form*/
+
+
+  /*==================================
+    User Information Form
+  ====================================*/
+    .usrinfoform_title{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5em;
+    }
+    .usrinfoform_container{
+      display: flex;
+      flex-direction: column;
+      margin: 0 3em 5em 3em;
+    }
+    label{
+      font-size: 1.3em;
+    }
+  
+  /*=================================
+      MEDIA QUERIES
+  ===================================*/
+  @media (min-width: 769px) {
+    .main_header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1.5em 1em;
+    }
+  
+    .main_nav_left,
+    .main_nav_right,
+    .row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  
+    /*start of FOOTER*/
+    .main_footer {
+      flex-flow: row wrap;
+      justify-content: space-around;
+    }
+
+    .usrinfoform_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20em 0 20em;
+    }
+  
+  }
+  
+  @media (min-width: 1020px) {
+    .container_header_content {
+      margin: 0 8em;
+    }
+  
+    /* Body section*/
+    .primary-section-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 2em;
+    }
+  
+    .primary-section-content-image img {
+      width: 48em;
+    }
+  
+    .login-main-section {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+    }
+  
+    .login-main-section-info {
+      margin: 3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .usrinfoform_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20em 0 20em;
+    }
+  }
+  
+  @media(min-width: 1700px) {
+    .primary-section-content-info {
+      margin-left: 5em;
+    }
+    .usrinfoform_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20em 0 20em;
+      margin: 0 10em 5em 10em;
+    }
+  }

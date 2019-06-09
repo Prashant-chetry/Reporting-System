@@ -1,0 +1,23 @@
+{{#each users}}
+
+    <center>
+        <div>
+													<form method="post" action="/users/{{id}}?_method=DELETE">
+														<div class="card-container">
+														<div class="card">
+														<h1></h1>
+                                                        <p>Users</p>
+														<div class="">{{firstName}} {{surName}}</div>
+                                                        <div>{{adress}}</div>
+														<input type="hidden" name="_method" value="DELETE">
+														<input type="submit" class="btn" value="Delete">
+														</div>
+														</div>
+													</form>
+		</div>
+
+        {{else}}
+            <p>Sorry, No user found</p>
+    </center>
+
+{{/each}}

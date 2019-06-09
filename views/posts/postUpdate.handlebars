@@ -1,0 +1,111 @@
+{{!-- <div class="post-main-cont">
+
+<div class="post-container">
+    <form action="/feed_form" method="POST" class="post-form" enctype="multipart/form-data">
+    <div class="post-form-title">Report your problem</div>
+    <div class="post-form-body">
+        <textarea name="description" placeholder="Describe" class="postText"></textarea>
+        <h3>Enter the area details where the problem is</h3>
+        <input type="text" placeholder="city/village" class="cityVill" name="city_village">
+        <input type="text" placeholder="District" class="dist" name="district">
+        <input type="text" placeholder="State" class="state" name="state">
+        <input type="number" placeholder="PIN code*" class="pin" name="pincode">
+        <br>
+        <input type="file" name="pic">
+        <br> Select priority
+        <select name="priority" >
+            <option value="important">Important</option>
+            <option value="veryImportant">Very Important</option>
+            <option value="extremelyImportant">Extremely Important</option>
+        </select>
+    </div>
+    <div class="post-form-footer">
+    <button type="submit">Post</button>
+    <a href="/feed">cancel</a>
+    </div>
+    </form>
+</div>
+<!-- Image slide -->
+<div>
+   
+</div>
+
+</div> --}}
+
+
+  <div class="containerPost">
+  <form action="/feed_form" method="POST" enctype="multipart/form-data">
+    <h1>Write your problem </h1>
+    <br>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">City/village</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="city_village" placeholder="Your city/village">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">District</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="district" placeholder="District you live">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">State</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="state" placeholder="State...">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Pincode</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="pincode" placeholder="PIN code...">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Priority</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="priority">
+          <option value="important">Important</option>
+          <option value="veryImportant">Very Important</option>
+          <option value="extremelyImportant">Extremely Important</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Picture Upload</label>
+      </div>
+      <div class="col-75">
+        <input type="file" id="lname" name="pic" style="width:200px" >
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Describe</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="description" placeholder="Write your problem to us" style="height:100px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div> 

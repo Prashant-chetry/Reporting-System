@@ -1,0 +1,164 @@
+<!--Main Section-->
+<div class="main_header_content">
+  <div class="container_header_content">
+    <h1>REPORTING</h1>
+    <h1>YOUR</h1>
+    <h1>PROBLEMS</h1>
+    <p>Take Control of Your Problem and Control of Your Life.</p>
+  </div>
+</div>
+
+<div class="primary-section">
+  <div class="primary-section-title">
+    <h1 id="about">ABOUT US</h1>
+  </div>
+  <div class="primary-section-content">
+    <div class="primary-section-content-image">
+      <img src="images/india-1387887_1920.jpg" alt="">
+    </div>
+    <div class="primary-section-content-info">
+      <p>Problems of roads, bridges and many public shared comodities affect our lives immensely. These are the painful and irritating problems that we cannot solve by ourselves.
+         Only those who can are the authorities of your area. But the there is huge gap between you and your admistration. So we are here to help you at this matter, bridging the gap
+         between you two. All you have to do post description of the problem and a picture along with it and your authorities can take a look at your problems more vividly so that
+         they can take actions further</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="primary-section" style="background-color: #66ccff;">
+  <div class="primary-section-title">
+    <h1 id="about">Data driven society</h1>
+  </div>
+  <div>
+    <div class="infoP">
+      <p> Information is empowering </p>
+    </div>
+  </div>
+</div>
+
+
+<center>
+ <!-- Container for the image gallery -->
+<div class="icontainer">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="images/c.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="images/h.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="images/m.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="images/ad.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="images/hd.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="images/te.jpg" style="width:100%">
+  </div>
+
+
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="images/c.jpg" style="width:100%" onclick="currentSlide(1)" alt="Cattle">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/h.jpg" style="width:100%" onclick="currentSlide(2)" alt="Hut">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/m.jpg" style="width:100%" onclick="currentSlide(3)" alt="Weary look">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/ad.jpg" style="width:100%" onclick="currentSlide(4)" alt="Busy snap">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/hd.jpg" style="width:100%" onclick="currentSlide(5)" alt="amity and togetherness">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/te.jpg" style="width:100%" onclick="currentSlide(6)" alt="Tea folks">
+    </div>
+  </div>
+</div> 
+</center>
+
+<div class="primary-section" style="background-color: rgb(240, 181, 53);">
+  <div class="primary-section-title">
+    <h1 id="about">Efficient development</h1>
+  </div>
+  <div>
+    <div class="infoP">
+      <p> Help is what you will get, your needs are the high priority </p>
+    </div>
+  </div>
+</div>
+
+<div class="primary-section">
+  <div class="primary-section-title">
+    <h1 id="about">SO JOIN US</h1>
+  </div>
+  <div>
+    <div class="infoP">
+      <p> Sign up to a create an account and start posting  </p>
+    </div>
+    
+  </div>
+</div>
+
+
+<script>
+
+  var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+} 
+  
+</script>

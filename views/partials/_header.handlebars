@@ -1,0 +1,30 @@
+<header>
+            <!-- Navigation Bar -->
+            <div class="main_header">
+                <div class="main_header_title">
+                  <a href="/"><h1>REPORT</h1></a>
+                </div>
+          
+                <div class="row">
+                  <ul class="main_nav_left">
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                  </ul>
+                  <ul class="main_nav_right">
+                      {{#if user}}
+                        
+                        {{else}}
+                        <li><a href="/feed">FEED</a></li>
+                        <li><a href="/signup">SIGN UP</a></li>
+                        <li><a href="/login">LOG IN</a></li>
+                        {{!-- <li><a href="/login">My profile</a></li> --}}
+                        {{!-- <li><a href="/logout">LOG OUT</a></li> --}}
+                      {{/if}}
+                  </ul>
+                  {{!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                   </a> --}}
+                </div>
+        </div>
+    </header>

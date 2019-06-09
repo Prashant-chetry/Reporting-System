@@ -1,0 +1,13 @@
+{{#if sucess_msg}}
+  <div class="sucAlertbtn">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    {{sucess_msg}}
+  </div> 
+{{/if}}
+
+{{#if error_msg}}
+   <div class="erAlertbtn">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    {{error_msg}}
+  </div> 
+{{/if}}
