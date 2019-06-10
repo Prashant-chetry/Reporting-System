@@ -317,6 +317,60 @@ var storage = multer.diskStorage({
  });
 var upload = multer({storage: storage});
 
+// Edit Posts Form
+app.get('/posts/edit/:id', auth, (req, res) => {
+    Poster.findOne({
+      _id: req.params.id
+    })
+    .then(post => {
+      if(post.owner != req.user.id){
+        req.flash('error_msg', 'Not Authorized');
+        res.redirect('/feed');
+      } else {
+        res.render('posts/edit', {
+          post:post
+        });
+      }
+      
+    });
+  });
+
+//Post edit-form 
+app.post('/postEdit_form', upload.single('pic'), urlencodedParser , auth, async (req, res)=>{
+    console.log(req.body);
+    console.log(req.file);
+
+
+    //config for cloud-Storage
+    const path = req.file.path;
+    const uniqueFilenameOfPosts = new Date().toISOString();
+
+    var resultUrl = await cloudinary.uploader.upload(path, {public_id: `posts/${uniqueFilenameOfPosts}`}, (error, result)=>{
+        if(error){
+            console.log(error);
+        }else{
+            console.log('Posts File uploaded to cloudinary............');
+        }
+    });
+    var newPost = new Poster({
+    state: req.body.state,
+    pincode: req.body.pincode,
+    city_village: req.body.city_village,
+    district: req.body.district,
+    contentType: req.file.mimetype,
+    description: req.body.description,
+    imageUrlInDisk: path,                       //pic: req.file.buffer,
+    imageUrlInCloud: resultUrl.secure_url,
+    priority : req.body.priority,
+    owner: req.user._id});
+   // await newPost.populate('owner').execPopulate();
+
+    await newPost.save();
+    //res.send(newPost);
+    req.flash('sucess_msg', 'Your post updated');
+    res.redirect('/feed');
+});
+
 //Post request Feed-form 
 app.post('/feed_form', upload.single('pic'), urlencodedParser , auth, async (req, res)=>{
     console.log(req.body);
@@ -349,9 +403,10 @@ app.post('/feed_form', upload.single('pic'), urlencodedParser , auth, async (req
 
     await newPost.save();
     //res.send(newPost);
-    req.flash('sucess_msg', 'Hi there people');
+    req.flash('sucess_msg', 'New Post added');
     res.redirect('/feed');
 });
+
 
 //Posting user Info
 app.post('/userinfo', upload.single('avatar'),urlencodedParser, auth, async (req, res)=>{

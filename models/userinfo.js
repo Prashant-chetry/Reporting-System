@@ -56,9 +56,9 @@ var userInfoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // avatar : {
-    //     type : Buffer
-    // },
+    avatar : {
+        type : Buffer
+    },
     ownerinfo: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
