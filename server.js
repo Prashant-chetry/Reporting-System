@@ -532,7 +532,7 @@ app.get('/userprofileinfo',urlencodedParser, auth, async(req, res)=>{
 app.get('*', (req, res)=>{
     res.send('<h1>404 Page not found</h1>');
 });
-app.listen(8000, () => {
+app.listen(5000, () => {
     console.log('Server Connected and Running.....');
 });
 

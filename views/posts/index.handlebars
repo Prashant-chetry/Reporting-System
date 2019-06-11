@@ -2,9 +2,14 @@
 	<br>
 	<br>
 
-	<a href="/postUpdate" class="btn warning">Report a problem</a>
+	<a href="/postUpdate" class="btn warning"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 15px;"></i>
+Report a problem</a>
+	
+	<a href="/userprofileinfo" class="btn warning" style="background-color:blueviolet"><i class="fa fa-user" aria-hidden="true"></i>
+Myprofile</a>
 	<!-- Trigger/Open The Modal -->
-	<button id="myBtn">Filter posts</button>
+	<button id="myBtn"><i class="fa fa-filter" aria-hidden="true" style="margin-right: 15px;"></i>
+    Filter posts</button>
 
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
@@ -64,12 +69,7 @@
 			<div><b>Pincode:</b> {{pincode}}</div>
 			<div class=""><b>Problem:</b> {{description}}</div>
 
-			<a class="" href="/posts/edit/{{id}}">Edit</a>
-
-			<form method="post" action="/posts/{{id}}?_method=DELETE">
-				<input type="hidden" name="_method" value="DELETE">
-				<input type="submit" class="btn" value="Delete">
-			</form>
+			<button style="float:left; margin-top:5px;"><a class="" href="/posts/edit/{{id}}">Edit</a></button>
 
 		</div>
 	</div>
