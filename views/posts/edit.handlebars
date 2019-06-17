@@ -1,0 +1,76 @@
+<div class="containerPost">
+  <form action="/postEdit_form" method="POST" enctype="multipart/form-data">
+    <h1>Edit your post</h1>
+    <br>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">City/village</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="city_village" placeholder="Your city/village" value="{{post.city_village}}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">District</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="district" placeholder="District you live" value="{{post.district}}">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">State</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="state" placeholder="State..." value="{{post.state}}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Pincode</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="pincode" placeholder="PIN code..." value="{{post.pincode}}">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Priority</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="priority">
+          <option value="important">Important</option>
+          <option value="veryImportant">Very Important</option>
+          <option value="extremelyImportant">Extremely Important</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Picture Upload</label>
+      </div>
+      <div class="col-75">
+        <input type="file" id="lname" name="pic" style="width:200px" >
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Describe</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="description" placeholder="Write your problem to us" style="height:100px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div> 

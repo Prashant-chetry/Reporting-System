@@ -1,23 +1,29 @@
 {{#each users}}
 
-    <center>
-        <div>
-													<form method="post" action="/users/{{id}}?_method=DELETE">
-														<div class="card-container">
-														<div class="card">
-														<h1></h1>
-                                                        <p>Users</p>
-														<div class="">{{firstName}} {{surName}}</div>
-                                                        <div>{{adress}}</div>
-														<input type="hidden" name="_method" value="DELETE">
-														<input type="submit" class="btn" value="Delete">
-														</div>
-														</div>
-													</form>
-		</div>
+<center>
+	<div>
+		<form method="post" action="/users/{{id}}?_method=DELETE">
+			<div class="card-container">
+				<div class="card">
+					<h1></h1>
+					<div class="">{{firstName}} {{surName}}</div>
 
-        {{else}}
-            <p>Sorry, No user found</p>
-    </center>
+					<p>Date Of Birth: {{DoB}}</p>
+					<p>Address: {{address}}</p>
+					<p>City: {{city}}</p>
+					<p>State: {{state}}</p>
+					<p>Postal Code: {{zipCode}}</p>
+					<p>Mobile Number: {{mobileNo}}</p>
+
+					<input type="hidden" name="_method" value="DELETE">
+					<input type="submit" class="btn" value="Delete">
+				</div>
+			</div>
+		</form>
+	</div>
+
+	{{else}}
+	<p>Sorry, No user found</p>
+</center>
 
 {{/each}}
