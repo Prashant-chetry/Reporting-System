@@ -80,7 +80,7 @@ const sendWelcomeEmail = (email)=>{
 }
 
 /*=======================================
-            Routes
+            ROUTES
 ========================================= */
 //Home page rendering 
 app.get('/', (req, res) => {
@@ -96,6 +96,10 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
     res.render('contact', {title: 'Contact Page'});
 });
+
+/*====================================
+        SIGN UP Route
+====================================*/
 
 // Register form
 app.get('/signup', (req, res) => {
@@ -142,7 +146,9 @@ app.post('/signup', urlencodedParser, async (req, res) => {
         console.log(error);
     }
 }});
-
+/*=================================
+        LOGIN ROUTE
+=================================*/
 
 //Login form Get
 app.get('/login', (req, res) => {
@@ -191,6 +197,10 @@ app.get('/logout', auth, (req, res) => {
 }
 });
 
+/*====================================
+        FEED Route
+======================================*/
+
 //Feed GET request
 app.get('/feed', auth, (req, res) => {
     Poster.find({}).then(posts => {
@@ -237,6 +247,7 @@ app.post('/findBypriority', urlencodedParser, auth, (req, res)=> {
 })
 });
 
+//sorting
 app.post('/sortingPost', urlencodedParser, auth, (req, res)=> {
 
     if(req.body.sorting === 'LastAdded'){
@@ -408,6 +419,11 @@ app.post('/feed_form', upload.single('pic'), urlencodedParser , auth, async (req
 });
 
 
+
+/*=========================================
+        UserProfileinfo Route
+==========================================*/
+
 //Posting user Info
 app.post('/userinfo', upload.single('avatar'),urlencodedParser, auth, async (req, res)=>{
     //console.log(req.body);
@@ -452,6 +468,44 @@ app.post('/userinfo', upload.single('avatar'),urlencodedParser, auth, async (req
     res.redirect('/users/userinfo');
 });
 
+//Getting user-profile infomation form
+app.get('/userinfoform', urlencodedParser,auth, async (req, res)=>{
+    res.render('posts/userInfoForm');
+    // var user = req.user;
+    // await user.populate('userinfo').execPopulate();
+    // console.log(user.userinfo);
+});
+
+
+//Getting User profile
+app.get('/userprofileinfo',urlencodedParser, auth, async(req, res)=>{
+    var user = req.user;
+    
+    /*we need to populate the user model with userinfo model 
+        inorder for use to select the required user-avatar*/
+    await user.populate('userinfoMade').execPopulate();
+
+    var userinfo = user.userinfo; //these gives us an array of userinfo of the user
+    console.log(userinfo[0]);
+    console.log(userinfo[0].imageUrlInCloud);
+
+    //setting the content-type to image instead to application/json
+    // res.set('Content-Type', 'image/jpg');
+    // res.send(userinfo[0].avatar); //sending the image as a response
+
+    res.render('users/userinfo', {
+        firstName: userinfo[0].firstName,
+        surName: userinfo[0].surName,
+        avatar: userinfo[0].imageUrlInCloud,
+        address: userinfo[0].address,
+        mobileNo: userinfo[0].mobileNo,
+        zipCode: userinfo[0].zipcode,
+        DoB: userinfo[0].dateOfbirth,
+        city: userinfo[0].city,
+        state: userinfo[0].state
+    });
+});
+
 // Post delete by admin
 app.delete('/posts/:id', auth, (req, res)=> {
     
@@ -492,47 +546,14 @@ app.get('/postUpdate/:id', auth, (req, res) => {
     });
   });
 
-//Getting user-profile infomation form
-app.get('/userinfoform', urlencodedParser,auth, async (req, res)=>{
-    res.render('posts/userInfoForm');
-    // var user = req.user;
-    // await user.populate('userinfo').execPopulate();
-    // console.log(user.userinfo);
-});
-
-
-//Getting User profile
-app.get('/userprofileinfo',urlencodedParser, auth, async(req, res)=>{
-    var user = req.user;
-    
-    /*we need to populate the user model with userinfo model 
-        inorder for use to select the required user-avatar*/
-    await user.populate('userinfo').execPopulate();
-
-    var userinfo = user.userinfo; //these gives us an array of userinfo of the user
-    console.log(userinfo[0]);
-    console.log(userinfo[0].imageUrlInCloud);
-
-    //setting the content-type to image instead to application/json
-    // res.set('Content-Type', 'image/jpg');
-    // res.send(userinfo[0].avatar); //sending the image as a response
-
-    res.render('users/userinfo', {
-        firstName: userinfo[0].firstName,
-        surName: userinfo[0].surName,
-        avatar: userinfo[0].imageUrlInCloud,
-        address: userinfo[0].address,
-        mobileNo: userinfo[0].mobileNo,
-        zipCode: userinfo[0].zipcode,
-        DoB: userinfo[0].dateOfbirth,
-        city: userinfo[0].city,
-        state: userinfo[0].state
-    });
-});
+/*====================================
+         404 Route
+======================================*/
 app.get('*', (req, res)=>{
     res.send('<h1>404 Page not found</h1>');
 });
-app.listen(5000, () => {
+
+app.listen(8000, () => {
     console.log('Server Connected and Running.....');
 });
 

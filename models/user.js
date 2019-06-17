@@ -46,7 +46,7 @@ userSchema.virtual('postMade', {
     foreignField: 'owner'
 });
 
-userSchema.virtual('userinfo', {
+userSchema.virtual('userinfoMade', {
     ref: 'UserInfo',
     localField: '_id',
     foreignField: 'ownerinfo'
@@ -99,14 +99,14 @@ userSchema.methods.toJSON = function(){
     For Finding the user using Email and for verifying Password
 ===============================================================*/
 
-userSchema.statics.findByCredentials = async function(email, password){
+userSchema.statics.findByCredentials = async function(email, password){        //model method
   var user = await User.findOne({email: email});
 
   if(!user){    //When user is not found
     throw new Error('Unable to Login user');
   }
   //
-  const isMatch = bcryptjs.compare(password, user.password);
+  const isMatch = bcryptjs.compare(password, user.password); //return a boolean
 
   //checks if the password is correct or not
   if(!isMatch){
@@ -121,14 +121,14 @@ userSchema.statics.findByCredentials = async function(email, password){
 /*==========================
     Generates and Saves Token
 ============================*/
-userSchema.methods.generateAuthToken = function(){
+userSchema.methods.generateAuthToken = function(){ //instance method
     var user = this;
     var token = jwt.sign({_id: user._id.toString()}, 'reporting_Application', {expiresIn: '24 hours'});
-    console.log('Token generated');
+    console.log('Token generated...................');
     //saving the token
     user.tokens.push({token: token});
      user.save().then(()=>{
-         console.log('token Saved');
+         console.log('token Saved...................');
      });
     
     localStorage.setItem('Authorization', token);  // token is saved in localStroage
